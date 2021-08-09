@@ -35,14 +35,14 @@ function showCategoriesList(categoriesArray) {
 
 document.addEventListener("DOMContentLoaded", function(e) {
 
-
-});
-showSpinner();
-getJSONData(PRODUCTS_URL).then(function(resultObj) {
-    if (resultObj.status === "ok") {
-        categoriesArray = resultObj.data;
-        //Muestro las categorías ordenadas
-        showCategoriesList(categoriesArray);
-        hideSpinner();
-    }
+    showSpinner();
+    var result = {};
+    getJSONData(PRODUCTS_URL).then(function(resultObj) {
+        if (resultObj.status === "ok") {
+            categoriesArray = resultObj.data;
+            //Muestro las categorías ordenadas
+            showCategoriesList(categoriesArray);
+            hideSpinner();
+        }
+    });
 });
