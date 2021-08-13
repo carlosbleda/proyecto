@@ -40,16 +40,16 @@ var getJSONData = function(url) {
         });
 }
 
-function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function() {
-        console.log('User signed out.');
+var cerrarsesion = function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function() {
+            console.log('User signed out.');
 
-    });
-}
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
+        });
+    }
+    //Función que se ejecuta una vez que se haya lanzado el evento de
+    //que el documento se encuentra cargado, es decir, se encuentran todos los
+    //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e) {
 
 });
