@@ -19,7 +19,7 @@ function listadeproductos(array) {
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">` + product.name + `</h4>
                        
-                        <small class="text-muted">` + product.cost + ` artículos</small>
+                        <small class="text-muted">` + product.soldCount + ` artículos</small>
                     </div>
                     <p>` + product.description + `</p>
                 </div>

@@ -2,13 +2,27 @@
     body {
         background-image: url(../img/login.png);
         background-position: center;
-        background-size: 100%;
+        background-size: 50%;
+        background-color: black;
         background-repeat: no-repeat;
-        font-family: fantasy;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
     
     form {
-        background-color: transparent;
+        display: block;
+        background: scroll;
+    }
+    
+    #inputusuario {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #inputPassword {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .mb-4 {
@@ -16,4 +30,19 @@
         height: 100px;
         border-radius: 50%;
         ;
+    }
+    
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
     }
