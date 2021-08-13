@@ -32,11 +32,10 @@ function listadeproductos(array) {
 
 }
 
-document.addEventListener("DOMContentLoaded", function(e) {
-    getJSONData(PRODUCTS_URL).then(function(resultObj) {
+document.addEventListener("DOMContentLoaded", function(e) { //agrege la funcion de traer el json a la pagina 
+    getJSONData(PRODUCTS_URL).then(function(resultObj) { //lo hice mediante un
         if (resultObj.status === "ok") {
             arrayproductos = resultObj.data;
-
             listadeproductos(arrayproductos);
         }
     });
