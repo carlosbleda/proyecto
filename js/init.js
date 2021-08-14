@@ -55,7 +55,8 @@ function mostrardatos(usuario, sesion) {
     document.getElementById('sesion').innerHTML = sesion;
     //Nótese que si cerramos el navegador y volvemos a abrir, el dato sigue almacenado
 }
-//Función que se ejecuta una vez que se haya lanzado el evento de
+
+//Fufnción que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e) {

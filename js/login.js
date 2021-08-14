@@ -1,4 +1,4 @@
-function guardar(dato, pass) {
+function guardardatos(dato, pass) {
 
     if (dato.trim() === "" || pass.trim() === "") { //Chequea que el dato recibido no esté vacío. 
         //El método trim elimina los espacios en blanco al inicio y al final del mismo.
@@ -19,10 +19,10 @@ function guardar(dato, pass) {
 
 function onSignIn(googleUser) { //funcion de inicio de sesion del boton de google
     var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId())
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail());
+    sessionStorage.setItem('ID: ' + profile.getId())
+    sessionStorage.setItem('Name: ' + profile.getName());
+    sessionStorage.setItem('Image URL: ' + profile.getImageUrl());
+    sessionStorage.setItem('Email: ' + profile.getEmail());
     location.href = "/proyecto/index.html" //redireccion a la pagina principal
 }
 //Función que se ejecuta una vez que se haya lanzado el evento de
