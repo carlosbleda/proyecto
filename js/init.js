@@ -48,15 +48,32 @@ function signOut() {
     });
 }
 
-function mostrardatos(usuario, sesion) {
-    var usuario = localStorage.getItem("usuario"); //getItem Obtiene el dato de la posición "usuario"
-    var sesion = sessionStorage.getItem("usuario");
-    document.getElementById('user').innerHTML = usuario;
-    document.getElementById('sesion').innerHTML = sesion;
-    //Nótese que si cerramos el navegador y volvemos a abrir, el dato sigue almacenado
+function guardardatos(dato, pass) {
+    var dato = document.getElementById('inputusuario')
+    var pass = document.getElementById('inputPassword')
+
+    if (dato.trim() === "" || dato.trim() === null) { //Chequea que el dato recibido no esté vacío. 
+        //El método trim elimina los espacios en blanco al inicio y al final del mismo.
+        console.log("El dato está vacío");
+    }
+    if (pass.trim() === "" || pass.trim() === null) {
+        console.log("El password esta vacio")
+    } else {
+        localStorage.setItem("usuario", dato.trim()); //setItem almacena el dato en la posición "usuario"
+        localStorage.setItem("password", pass.trim()); // Almaceno la contraseña
+        sessionStorage.setItem("usuario", dato.trim());
+        console.log(" Usuario : " + dato + " Password : " + pass);
+        var datos = document.getElementById('dato');
+        var usuario = localStorage.getItem("usuario"); //getItem Obtiene el dato de la posición "usuario"
+        var sesion = sessionStorage.getItem("usuario");
+
+    }
+    datos.innerHTML = 'iniciaste sesion como:' + usuario + sesion;
 }
 
-//Fufnción que se ejecuta una vez que se haya lanzado el evento de
+
+
+//Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e) {

@@ -1,13 +1,13 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-var arrayproductos = [];
+var productos = [];
 
-function listadeproductos(array) {
+function listadeproductos(arrayproductos) {
 
     let htmlContentToAppend = "";
-    for (let i = 0; i < array.length; i++) {
-        let product = array[i];
+    for (let i = 0; i < productos.length; i++) {
+        let product = productos[i];
 
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
@@ -33,7 +33,7 @@ function listadeproductos(array) {
 }
 
 document.addEventListener("DOMContentLoaded", function(e) { //agrege la funcion de traer el json a la pagina 
-    getJSONData(PRODUCTS_URL).then(function(resultObj) { //lo hice mediante un
+    getJSONData(PRODUCTS_URL).then(function(resultObj) {
         if (resultObj.status === "ok") {
             arrayproductos = resultObj.data;
             listadeproductos(arrayproductos);

@@ -1,8 +1,11 @@
 function guardardatos(dato, pass) {
 
-    if (dato.trim() === "" || pass.trim() === "") { //Chequea que el dato recibido no esté vacío. 
+    if (dato.trim() === "" || dato.trim() === null) { //Chequea que el dato recibido no esté vacío. 
         //El método trim elimina los espacios en blanco al inicio y al final del mismo.
         console.log("El dato está vacío");
+    }
+    if (pass.trim() === "" || pass.trim() === null) {
+        console.log("El password esta vacio")
     } else {
         localStorage.setItem("usuario", dato.trim()); //setItem almacena el dato en la posición "usuario"
         localStorage.setItem("password", pass.trim()); // Almaceno la contraseña
@@ -15,6 +18,10 @@ function guardardatos(dato, pass) {
         //getItem obtiene el dato almacenado en la posición "usuario"
 
     }
+}
+
+function validarlogin(dato, pass) {
+
 }
 
 function onSignIn(googleUser) { //funcion de inicio de sesion del boton de google
