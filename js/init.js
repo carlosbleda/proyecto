@@ -50,16 +50,6 @@ function signOut() {
     });
 }
 
-function onSignIn(googleUser) { //funcion de inicio de sesion del boton de google
-    var profile = googleUser.getBasicProfile();
-    sessionStorage.setItem('ID: ' + profile.getId())
-    sessionStorage.setItem('Name: ' + profile.getName());
-    sessionStorage.setItem('Image URL: ' + profile.getImageUrl());
-    sessionStorage.setItem('Email: ' + profile.getEmail());
-    location.href = "index.html";
-}
-
-
 function datoslogin(usuario, pass) {
     sessionStorage.setItem("usuario" + usuario)
     sessionStorage.setItem("pass" + pass)
