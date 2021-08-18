@@ -8,18 +8,16 @@
     }
     
     html {
+        background-color: black;
         height: 100%;
     }
     
     body {
+        background-color: black;
         height: 100%;
         margin: 0;
         background-repeat: no-repeat;
         background-attachment: fixed;
-    }
-    
-    .container p-5 {
-        background-color: black;
     }
     /* Text Align */
     

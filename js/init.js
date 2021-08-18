@@ -40,6 +40,8 @@ var getJSONData = function(url) {
         });
 }
 
+
+
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance().disconnect();
     auth2.signOut().then(function() {
@@ -48,30 +50,22 @@ function signOut() {
     });
 }
 
-function guardardatos(dato, pass) {
-    var dato = document.getElementById('inputusuario')
-    var pass = document.getElementById('inputPassword')
-
-    if (dato.trim() === "" || dato.trim() === null) { //Chequea que el dato recibido no esté vacío. 
-        //El método trim elimina los espacios en blanco al inicio y al final del mismo.
-        console.log("El dato está vacío");
-    }
-    if (pass.trim() === "" || pass.trim() === null) {
-        console.log("El password esta vacio")
-    } else {
-        localStorage.setItem("usuario", dato.trim()); //setItem almacena el dato en la posición "usuario"
-        localStorage.setItem("password", pass.trim()); // Almaceno la contraseña
-        sessionStorage.setItem("usuario", dato.trim());
-        console.log(" Usuario : " + dato + " Password : " + pass);
-        var datos = document.getElementById('dato');
-        var usuario = localStorage.getItem("usuario"); //getItem Obtiene el dato de la posición "usuario"
-        var sesion = sessionStorage.getItem("usuario");
-
-    }
-    datos.innerHTML = 'iniciaste sesion como:' + usuario + sesion;
+function onSignIn(googleUser) { //funcion de inicio de sesion del boton de google
+    var profile = googleUser.getBasicProfile();
+    sessionStorage.setItem('ID: ' + profile.getId())
+    sessionStorage.setItem('Name: ' + profile.getName());
+    sessionStorage.setItem('Image URL: ' + profile.getImageUrl());
+    sessionStorage.setItem('Email: ' + profile.getEmail());
+    location.href = "/proyecto/index.html" //redireccion a la pagina principal
 }
 
 
+function datoslogin(usuario, pass) {
+    sessionStorage.setItem("usuario" + usuario)
+    sessionStorage.setItem("pass" + pass)
+    document.getElementById('')
+
+}
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
