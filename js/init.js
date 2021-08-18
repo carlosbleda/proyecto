@@ -49,6 +49,7 @@ function signOut() {
 
     });
 }
+asdasd
 
 function datoslogin(usuario, pass) {
     sessionStorage.setItem("usuario" + usuario)
