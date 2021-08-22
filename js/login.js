@@ -29,16 +29,17 @@ function cargarErrores() {
 
 }
 
-function validar(user, pass) {
-    if (user.value == "" || pass.value == "") { //Chequea que el dato recibido no esté vacío. 
-        //El método trim elimina los espacios en blanco al inicio y al final del mismo.
+
+
+function validar() {
+    if (usuario.value == "" || contraseña.value == "") {
         cargarErrores();
     } else {
-        localStorage.setItem("usuario", user.value); //setItem almacena el dato en la posición "usuario"
-        localStorage.setItem("password", pass.value); // Almaceno la contraseña
-        sessionStorage.setItem("usuario", user.value);
-        console.log(" Usuario : " + user + " Password : " + pass);
-        location.href = "index.html";
+        localStorage.setItem("usuario", usuario.value); //setItem almacena el dato en la posición "usuario"
+        localStorage.setItem("password", contraseña.value); // Almaceno la contraseña
+        sessionStorage.setItem("usuario", usuario.value);
+        //console.log(" Usuario : " + user + " Password : " + pass);
+        location.href = 'index.html'
 
     }
 }
