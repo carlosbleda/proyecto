@@ -1,33 +1,47 @@
-function validar() {
+var usuario = document.getElementById('nombre');
+var contraseña = document.getElementById('pass');
+var span1 = document.getElementById('mensaje');
+var span2 = document.getElementById('mensaje2');
 
-    var usuario = document.getElementById('nombre');
-    var contraseña = document.getElementById('pass');
-    var span1 = document.getElementById('errorusuario');
-    var span2 = document.getElementById('errorcontraseña');
 
-    if (usuario.value === '' || contraseña.value === '') {
-        span1.style.display = 'block';
-        span2.style.display = 'block';
+function cargarErrores() {
+    //Validar nombre
+
+    if (usuario.value == '') {
+        span1.style.display = "block";
         span1.innerHTML = 'debe ingresar usuario';
+        span1.style.color = 'red'
+        usuario.style.border = '1 px solid red';
+    }
+    if (contraseña.value == '') {
+        span2.style.display = "block";
         span2.innerHTML = 'debe ingresar contraseña';
-        usuario.classList.add('error');
-        contraseña.classList.add('error');
-        usuario.style.border = '2px solid red';
-        contraseña.style.border = '2px solid red';
+        contraseña.style.border = '1 px solid red';
+        span2.style.color = 'red'
     } else {
+        contraseña.style.border = '1 px solid black';
+        usuario.style.border = '1 px solid black';
         span1.style.display = 'none';
         span2.style.display = 'none';
-        usuario.classList.remove("error");
-        contraseña.classList.remove('error');
-        span1.innerHTML = ' ';
-        span2.innerHTML = ' ';
-        location.href = 'index.html'
 
     }
 
 
 }
 
+function validar(user, pass) {
+    if (user.value == "" || pass.value == "") { //Chequea que el dato recibido no esté vacío. 
+        //El método trim elimina los espacios en blanco al inicio y al final del mismo.
+        cargarErrores();
+    } else {
+        localStorage.setItem("usuario", user.value); //setItem almacena el dato en la posición "usuario"
+        localStorage.setItem("password", pass.value); // Almaceno la contraseña
+        sessionStorage.setItem("usuario", user.value);
+        console.log(" Usuario : " + user + " Password : " + pass);
+        location.href = "index.html";
+
+    }
+}
 
 
 function onSignIn(googleUser) { //funcion de inicio de sesion del boton de google

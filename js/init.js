@@ -6,6 +6,8 @@ const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678
 const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
+var datoslogin = localStorage.length;
+
 
 var showSpinner = function() {
     document.getElementById("spinner-wrapper").style.display = "block";
@@ -13,6 +15,14 @@ var showSpinner = function() {
 
 var hideSpinner = function() {
     document.getElementById("spinner-wrapper").style.display = "none";
+}
+
+function login() {
+    if (datoslogin === null) {
+        window.location = 'login.html';
+    } else {
+        window.location = 'index.html';
+    }
 }
 
 var getJSONData = function(url) {
@@ -40,27 +50,34 @@ var getJSONData = function(url) {
         });
 }
 
+function desconectar() {
+    localStorage.clear();
+    window.location = '/login.html'
+
+}
 
 
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance().disconnect();
     auth2.signOut().then(function() {
         console.log('User signed out.');
+        location.href = 'login.html'
 
     });
 }
 
 
-function datoslogin(usuario, pass) {
-    sessionStorage.setItem("usuario" + usuario)
-    sessionStorage.setItem("pass" + pass)
-    document.getElementById('')
-
+function datoslogin(usuario) {
+    var datos = sessionStorage.getItem("usuario" + usuario.value)
+    var datoselement = document.getElementById('datos')
+    datoselement.innerHTML += datos;
+    //
 }
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e) {
-
+    login();
+    datoslogin();
 });

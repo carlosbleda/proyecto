@@ -21,6 +21,11 @@
     }
     /* Text Align */
     
+    .error {
+        border: red;
+        display: block;
+    }
+    
     .text-c {
         text-align: center;
     }
