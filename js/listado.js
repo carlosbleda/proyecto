@@ -36,7 +36,7 @@ function showCategoriesList(categoriesArray) {
 document.addEventListener("DOMContentLoaded", function(e) {
 
     showSpinner();
-    var result = {};
+
     getJSONData(PRODUCTS_URL).then(function(resultObj) {
         if (resultObj.status === "ok") {
             categoriesArray = resultObj.data;

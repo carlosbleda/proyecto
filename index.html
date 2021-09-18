@@ -3,16 +3,18 @@
 <html lang="en">
 
 <head>
-    <link rel="import" href="login.html">
 
-    <meta href="login.html">
-    <base target="_blank" />
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="google-signin-client_id" content="155266982111-n1p7es0h4vogqfron50ghq2lrsiv8hfe.apps.googleusercontent.com">
     <title>eMercado - Todo lo que busques está aquí</title>
-
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/login.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap core CSS -->
@@ -21,6 +23,9 @@
 </head>
 
 <body>
+    <script>
+        login();
+    </script>
     <nav class="site-header sticky-top py-1 bg-dark">
         <div class="container d-flex flex-column flex-md-row justify-content-between">
             <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
@@ -29,7 +34,7 @@
             <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
             <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
             <a class="py-2 d-none d-md-inline-block" id="datos"></a>
-            <button type="button" class="py-2 d-none d-md-inline-block" onclick=" desconectar();signOut()">Desconectar</button>
+            <button type="button" class="py-2 d-none d-md-inline-block " onclick="desconectar()">Desconectar</button>
 
 
         </div>
@@ -111,12 +116,12 @@
             </p>
             <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
             <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+
         </div>
     </footer>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+
 </body>
 
 </html>
