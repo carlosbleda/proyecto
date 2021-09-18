@@ -7,17 +7,15 @@ var span2 = document.getElementById('mensaje2');
 function cargarErrores() {
     //Validar nombre
 
-    if (usuario.value == '') {
+    if (usuario.value === "" && contraseña.value === "") {
         span1.style.display = "block";
         span1.innerHTML = 'debe ingresar usuario';
         span1.style.color = 'red'
         usuario.style.border = '1 px solid red';
-    }
-    if (contraseña.value == '') {
         span2.style.display = "block";
-        span2.innerHTML = 'debe ingresar contraseña';
-        contraseña.style.border = '1 px solid red';
+        span2.innerHTML = 'Debe ingresar contraseña';
         span2.style.color = 'red'
+        contraseña.style.border = '1 px solid red';
     } else {
         contraseña.style.border = '1 px solid black';
         usuario.style.border = '1 px solid black';
@@ -32,7 +30,7 @@ function cargarErrores() {
 
 
 function validar() {
-    if (usuario.value == "" || contraseña.value == "") {
+    if (usuario.value == " " || contraseña.value == " ") {
         cargarErrores();
     } else {
         sessionStorage.setItem("usuario", usuario.value);
@@ -56,5 +54,6 @@ function onSignIn(googleUser) { //funcion de inicio de sesion del boton de googl
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e) {
 
-
+    usuario.addEventListener("blur", cargarErrores);
+    contraseña.addEventListener("blur", cargarErrores);
 });

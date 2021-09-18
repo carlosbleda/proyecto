@@ -27,11 +27,11 @@ function mostrarusuario() {
 
 function login() {
     if (guardardatos === null) {
-        if (guardardatos == null) {
-            location.href = 'login.html'
-        } else {
 
-        }
+        location.href = 'login.html'
+    } else {
+
+
     }
 }
 
