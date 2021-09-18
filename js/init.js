@@ -25,87 +25,69 @@ function mostrarusuario() {
 
 }
 
-function login() { <<
-    <<
-    << < HEAD
-    if (guardardatos === null) { ===
-        ===
-        =
-        if (guardardatos == null) { >>>
-            >>>
-            > e5a81d32c899276569616d3a82fd5ff6dd2545aa
+function login() {
+    if (guardardatos === null) {
+        if (guardardatos == null) {
             location.href = 'login.html'
         } else {
 
         }
     }
+}
 
 
-    var getJSONData = function(url) {
-        var result = {};
-        showSpinner();
-        return fetch(url)
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw Error(response.statusText);
-                }
-            })
-            .then(function(response) {
-                result.status = 'ok';
-                result.data = response;
-                hideSpinner();
-                return result;
-            })
-            .catch(function(error) {
-                result.status = 'error';
-                result.data = error;
-                hideSpinner();
-                return result;
-            });
-    }
-
-
-    <<
-    <<
-    << < HEAD
-    /* function desconectar() {
-        localStorage.clear();
-        window.location = 'login.html'
-    } */
-        ===
-        ===
-        =
-        function desconectar() {
-            localStorage.clear();
-            window.location = 'login.html'
-        } >>>
-        >>>
-        > e5a81d32c899276569616d3a82fd5ff6dd2545aa
-
-
-    function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance().disconnect();
-        auth2.signOut().then(function() {
-            console.log('User signed out.');
-            location.href = '/login.html'
-
+var getJSONData = function(url) {
+    var result = {};
+    showSpinner();
+    return fetch(url)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw Error(response.statusText);
+            }
+        })
+        .then(function(response) {
+            result.status = 'ok';
+            result.data = response;
+            hideSpinner();
+            return result;
+        })
+        .catch(function(error) {
+            result.status = 'error';
+            result.data = error;
+            hideSpinner();
+            return result;
         });
-    }
+}
 
-    //Función que se ejecuta una vez que se haya lanzado el evento de
-    //que el documento se encuentra cargado, es decir, se encuentran todos los
-    //elementos HTML presentes.
-    document.addEventListener("DOMContentLoaded", function(e) { <<
-        <<
-        << < HEAD
-        mostrarusuario(); ===
-        ===
-        =
 
-        >>>
-        >>>
-        > e5a81d32c899276569616d3a82fd5ff6dd2545aa
-        // datoslogin();
+
+/* function desconectar() {
+    localStorage.clear();
+    window.location = 'login.html'
+} */
+
+function desconectar() {
+    localStorage.clear();
+    window.location = 'login.html'
+}
+
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance().disconnect();
+    auth2.signOut().then(function() {
+        console.log('User signed out.');
+        location.href = '/login.html'
+
     });
+}
+
+//Función que se ejecuta una vez que se haya lanzado el evento de
+//que el documento se encuentra cargado, es decir, se encuentran todos los
+//elementos HTML presentes.
+document.addEventListener("DOMContentLoaded", function(e) {
+
+    mostrarusuario();
+
+    // datoslogin();
+});
