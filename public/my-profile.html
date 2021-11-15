@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>eMercado - Todo lo que busques está aquí</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/dropzone.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="site-header sticky-top py-1 bg-dark">
+        <div class="container d-flex flex-column flex-md-row justify-content-between">
+            <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+            <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+            <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+            <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="datos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
+                    <a class="dropdown-item" href="cart.html">Mi Carrito</a>
+                    <a href="login.html"><button type="button" class="btn-danger" onclick="desconectar()">Desconectar</button></a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <div class="container p-5">
+        <h5 class="text-center">Registro</h5>
+        <div class="row d-flex">
+            <div class="col-md-6 left">
+                <div class="d-flex justify-content-between">
+                    <div id="contenedorImg" class="custom-file w-50" id="customFile">
+                        <input type="file" class="custom-file-input" id="imagen" aria-describedby="fileHelp">
+                        <label class="custom-file-label" for="exampleInputFile">
+                          Eliga Su Imagen De Perfil
+                        </label>
+
+                    </div>
+                    <img id="imganencargada" src='' style="order: -1;" class="img-thumbnail rounded-circle" />
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+
+                <form>
+                    <div class="form-group">
+                        <label for="Nombre">Nombre</label>
+                        <input type="text" class="form-control" id="Nombre" aria-describedby="emailHelp" placeholder="Nombre">
+                        <span id="mensaje1"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Apellido">Apellido</label>
+                        <input type="text" class="form-control" id="Apellido" placeholder="Apellido">
+                        <span id="mensaje2"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Edad">Email</label>
+                        <input type="email" class="form-control" id="Email" placeholder="Email">
+                        <span id="mensaje3"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Edad">Edad</label>
+                        <input type="number" class="form-control w-50" id="Edad" placeholder="Edad">
+                        <span id="mensaje4"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Telefono">Telefono</label>
+                        <input type="number" class="form-control" id="Telefono" placeholder="Telefono">
+                        <span id="mensaje5"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Direccion">Direccion</label>
+                        <input type="text" class="form-control" id="Direccion" placeholder="Direccion">
+                        <span id="mensaje6"></span>
+                    </div>
+                    <span class="text-danger" id="error"></span>
+                    <div>
+                        <button type="button" id="boton" class="btn btn-primary">Guardar Datos</button>
+                        <button type="button" id="limpiar" class="btn btn-danger">Limpiar Datos</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="text-muted bg-light">
+        <div class="container">
+            <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+            <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+        </div>
+    </footer>
+
+    </div>
+    <div id="spinner-wrapper">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/my-profile.js"></script>
+</body>
+
+</html>
