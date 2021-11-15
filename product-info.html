@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>eMercado - Todo lo que busques está aquí</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="site-header sticky-top py-1 bg-dark">
+        <div class="container d-flex flex-column flex-md-row justify-content-between">
+            <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+            <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+            <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+            <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+            <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+            <a class="py-2 d-none d-md-inline-block" id="datos"></a>
+            <button type="button" class="py-2 d-none d-md-inline-block " onclick="desconectar()">Desconectar</button>
+        </div>
+    </nav>
+    <div class="container" id="productImagesGallery">
+
+        <div class="container mt-5">
+            <div class="text-center p-4">
+                <h2>Descripción del Producto</h2>
+                <p class="lead">Encontrarás aquí toda la información de el producto seleccionado.</p>
+                <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto seleccionado previamente, siempre se visualizará la presente: <strong>Chevrolet Onix Joy</strong>.</p>
+            </div>
+            <img class="img-fluid ml-6" src="img/prod1.jpg" alt="">
+            <h3 id="productName"></h3>
+            <hr class="my-3">
+            <dl>
+                <dt>Descripción</dt>
+                <dd>
+                    <p id="productDescription"></p>
+                </dd>
+
+                <dt>Cantidad de Vendidos</dt>
+                <dd>
+                    <p id="productsold"></p>
+                </dd>
+                <dt>Precio del Producto</dt>
+                <dd>
+                    <p id="precio"></p>
+                </dd>
+                <dt>Categoría</dt>
+                <dd>
+                    <a href="products.html" id="categoria"></a>
+                </dd>
+
+                <dt>Imágenes ilustrativas</dt>
+
+                <div class="row">
+                    <div class="row" id="Images"></div>
+                </div>
+
+                <dt>Comentarios</dt>
+                <dd>
+
+                    <div class="row text-center text-lg-left pt-2" id="comentarios">
+                        <div id="estrellas"></div>
+                    </div>
+
+                </dd>
+                <dt>Productos relacionados</dt>
+                <dd>
+                    <div class="row text-center text-lg-left pt-2" id="productosrelacionados"></div>
+                </dd>
+            </dl>
+            <form>
+                <bold>
+                    <h5 class="">Agregar Comentarios</h5>
+                </bold>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Calificacion</label>
+                    <select id="cantidadestrellas" class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Comentario</label>
+                    <textarea id="comentarioagregado" onblur="agragarcomentario()" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <span class="text-danger" id="error"></span><br>
+                <button type="button" onclick=agregarcomentario()>Enviar comentario</button>
+            </form>
+
+        </div>
+        <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Volver a productos</a>
+        </main>
+    </div>
+
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-right">
+                <a href="#">Volver arriba</a>
+            </p>
+            <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+            <p>Clickea <a target="_blank" href="Letra.pdf ">aquí</a> para descargar la letra del obligatorio.</p>
+        </div>
+    </footer>
+    <div id="spinner-wrapper">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/product-info.js"></script>
+    <script src="js/comments.js"></script>
+</body>
+
+</html>
