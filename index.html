@@ -15,6 +15,8 @@
     <script src="js/login.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+    <link href="https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid=fe16b7c5e18f3e3eddb5c79e3bfe508f
+    ">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -25,17 +27,31 @@
     <script>
         login();
     </script>
+    <div>
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Inicio</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
     <nav class="site-header sticky-top py-1 bg-dark">
         <div class="container d-flex flex-column flex-md-row justify-content-between">
             <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
             <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
             <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
             <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-            <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-            <a class="py-2 d-none d-md-inline-block" id="datos"></a>
-            <button type="button" class="py-2 d-none d-md-inline-block " onclick="desconectar()">Desconectar</button>
-
-
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="datos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
+                    <a class="dropdown-item" href="cart.html">Mi Carrito</a>
+                    <a href="login.html"><button type="button" class="btn-danger" onclick="desconectar()">Desconectar</button></a>
+                </div>
+            </div>
         </div>
     </nav>
     <main role="main">
